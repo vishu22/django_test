@@ -5,23 +5,13 @@ test:
   post:
     - coverage html -d $CIRCLE_ARTIFACTS
 deployment:
-    staging:
-      branch: development
-	codedeploy:
-	  django_test:
-	    deployment_group: staging-instance-group
-              application_root: /
-    revision_location:
-      revision_type: S3
-        s3_location:
-          bucket: staging-bucket
-            key_pattern: apps/my-app-{SHORT_COMMIT}-{BUILD_NUM}
-        region: us-east-1
-        deployment_group: staging-instances
-        deployment_config: CodeDeployDefault.AllAtOnce
-production:
-  branch: master
+  staging:
+    branch: development
     codedeploy:
       django_test:
-	deployment_group: production-instance-group
-
+        deployment_group: staging-instance-group
+  production:
+    branch: master
+    codedeploy:
+      django_test:
+        deployment_group: production-instance-group
