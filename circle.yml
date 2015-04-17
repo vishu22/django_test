@@ -7,5 +7,5 @@ deployment:
   staging:
     branch: master
     codedeploy:
-      app:
+      vapp:
         deployment_group: staging-instance-group
