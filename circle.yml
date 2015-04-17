@@ -1,4 +1,3 @@
----
 test:
   override:
     - coverage run manage.py test
@@ -10,12 +9,3 @@ deployment:
     codedeploy:
       django_test:
         deployment_group: staging-instance-group
-<<<<<<< HEAD
-
-=======
-  production:
-    branch: master
-    codedeploy:
-      django_test:
-        deployment_group: production-instance-group
->>>>>>> origin/master
