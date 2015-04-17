@@ -8,5 +8,5 @@ deployment:
   staging:
     branch: master
     codedeploy:
-      django_test:
+      vishal_cd:
         deployment_group: staging-instance-group
