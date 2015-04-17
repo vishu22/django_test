@@ -3,9 +3,10 @@ test:
     - coverage run vapp/app/manage.py test
   post:
     - coverage html -d $CIRCLE_ARTIFACTS
+
 deployment:
   staging:
     branch: master
     codedeploy:
-      vapp:
+      vishal_cd:
         deployment_group: staging-instance-group
