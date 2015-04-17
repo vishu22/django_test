@@ -1,19 +1,5 @@
 version: 0.0
 os: linux
 files: 
-  - source: /
-    destination: /var/www/html
-hooks:
-  BeforeInstall:
-    - location: 
-      timeout: 300
-      runas: root
-  ApplocationStart:
-    - location: scripts/start_server
-      timepot: 300
-      runas: root
-  ApplicationStop:
-    - location: scripts/stop_server
-      timeout: 300
-      runas: root
-    
+  - source: /app
+    destination: /home/ubuntu/

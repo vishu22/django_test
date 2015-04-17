@@ -1,19 +1,11 @@
 test:
   override:
-    - coverage run manage.py test
+    - coverage run app/manage.py test
   post:
     - coverage html -d $CIRCLE_ARTIFACTS
 deployment:
   staging:
-    branch: development
+    branch: master
     codedeploy:
       django_test:
-        application_root: /
-        revision_location:
-          revision_type: S3
-          s3_location:
-            bucket: ec2-54-68-253-252.us-west-2.compute.amazonaws.com
-            key_pattern: apps/django_test-{SHORT_COMMIT}-{BUILD_NUM}
-        region: us-east-1
-        deployment_group: staging-instances
-        deployment_config: CodeDeployDefault.AllAtOnce
+        deployment_group: staging-instance-group
