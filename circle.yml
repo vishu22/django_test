@@ -1,6 +1,6 @@
 test:
   override:
-    - coverage run manage.py test
+    - coverage run app/manage.py test
   post:
     - coverage html -d $CIRCLE_ARTIFACTS
 deployment:
